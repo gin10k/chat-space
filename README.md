@@ -10,7 +10,7 @@ _usersテーブル
 
 _### Association
 _ has_many :posts
-_ has_many :groups trough groups-users
+_ has_many :groups trough groups_users
 _ has_many :groups_users
 
 
@@ -33,7 +33,7 @@ _groupsテーブル
 
 _### Association
 _ has_many :groups_users
-_ has_many :users through :groups-users
+_ has_many :users through :groups_users
 _ has_many :posts
 
 
