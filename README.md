@@ -41,7 +41,7 @@ _groups-usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user|reference|null:false,foreign_key:true|
-|groups|reference|null:false,foreign_key:true|
+|group|reference|null:false,foreign_key:true|
 
 _### Association
 _belongs_to:user
