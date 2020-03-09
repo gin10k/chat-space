@@ -17,8 +17,8 @@ _ has_many :groups_users
 _postsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user-id|integer|null:false,foreign_key:true|
-|group-id|integer|null:false,foreign_key:true|
+|user-id|reference|null:false,foreign_key:true|
+|group-id|reference|null:false,foreign_key:true|
 |body|text|null:false|
 |image|string|
 
@@ -40,8 +40,8 @@ _ has_many :posts
 _groups-usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null:false,foreign_key:true|
-|groups_id|integer|null:false,foreign_key:true|
+|user_id|reference|null:false,foreign_key:true|
+|groups_id|reference|null:false,foreign_key:true|
 
 _### Association
 _belongs_to:user
