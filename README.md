@@ -9,9 +9,9 @@ _usersテーブル
 |password|string|null.false|
 
 _### Association
-_ has-many :post
-_ has-many :groups trough groups-users
-_ has-many :groups_users
+_ has_many :posts
+_ has_many :groups trough groups-users
+_ has_many :groups_users
 
 
 _postsテーブル
@@ -28,8 +28,7 @@ _ belongs_to :group
 _groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|group-name|string|null:false|
-|group_id|integer|foreign_key:true|
+|name|string|null:false|
 
 _### Association
 _ has_many :groups_users
@@ -44,5 +43,5 @@ _groups-usersテーブル
 |groups_id|integer|null:false,foreign_key:true|
 
 _### Association
-_belongs_to:users
-_belongs_to:groups
+_belongs_to:user
+_belongs_to:group
