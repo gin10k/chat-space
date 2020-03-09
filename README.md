@@ -18,6 +18,7 @@ _postsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user-id|integer|null:false,foreign_key:true|
+|group-id|integer|null:false,foreign_key:true|
 |body|text|null:false|
 |image|string|
 
