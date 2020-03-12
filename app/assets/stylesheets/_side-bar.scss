@@ -1,0 +1,55 @@
+.side-bar{
+  &__header{
+    background-color:#253141;
+    width:300px;
+    height:100px;
+    display: flex;
+    align-items: center;
+    &__name{
+      color:#ffffff;
+      font-size:16px;
+      height:20px;
+      width:300px;
+      top:40px;
+      display: flex;
+      justify-content: space-between;
+      margin-left: 20px;
+      margin-right: 20px;
+      &__left {
+        line-height: 20px;
+        font-weight: bold;
+      }
+      &__right{
+        width: 60px;
+        text-align: right;
+        line-height: 20px;
+        a {
+          text-decoration: none;
+        }
+        .fa-edit{
+          color: #ffffff;
+        }
+        }
+        .fa-cog{
+          color: #ffffff;
+          margin-left: 5px;
+        }
+      }
+    }
+  &__group-list{
+    background-color: #2f3e51;
+    height: calc(100vh - 100px);
+    padding:20px 20px 0 20px;
+    color:#ffffff;
+    &__box{
+      margin-bottom: 40px;
+      &__name{
+        font-size:15px;
+        margin-bottom: 5px;
+      }
+      &__message{
+        font-size:11px;
+      }
+    }
+  }
+}
