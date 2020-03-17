@@ -2,36 +2,22 @@
   .main-chat__group-info
     .main-chat__group-info__left-box
       .main-chat__group-info__left-box__group
-        グループ
+        = @group.name
       .main-chat__group-info__left-box__member
-        メンバー：青木
+        Member: 
+        - @group.users.each do |user|
+          = user.name
     .main-chat__group-info__right-box
-      = link_to "#" do
+      = link_to edit_group_path(@group.id) do
         Edit
   .main-chat__message
-    .main-chat__message__log
-      .main-chat__message__log__upload
-        .main-chat__message__log__upload__name
-          あおき
-        .main-chat__message__log__upload__date
-          1960-12-01
-      .main-chat__message__log__comment
-        おはよう
-    .main-chat__message__log
-      .main-chat__message__log__upload
-        .main-chat__message__log__upload__name
-          あおき
-        .main-chat__message__log__upload__date
-          2020-5-16
-      .main-chat__message__log__comment
-        こんにちは
+    = render @messages
   .main-chat__form
-    .main-chat__form__flame
+    = form_for [@group, @message] do |f|
       .main-chat__form__flame__body
-        %input.input-text{:placeholder => "type a message"}
+        = f.text_field :content, class: 'flame__body', placeholder: 'type a message'
         .main-chat__form__flame__body__img
-          %label{class: "main-chat__form__flame__body__img__image"}
-            = icon('fas', 'image')
-            %input{type: "file"}
-      .main-chat__form__flame__btn
-        Send
+          = f.label :image, class: 'main-chat__form__flame__body__img__image' do
+            = icon('fas', 'image', class: 'icon')
+            = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'main-chat__form__flame__btn'
