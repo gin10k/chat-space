@@ -2,7 +2,7 @@ $(function(){
     function buildHTML(message){
     if ( message.image ) {
       var html =
-        `<div class="main-chat__message__log">
+        `<div class="main-chat__message__log" data-message-id="${message.id}">
           <div class="main-chat__message__log__upload">
             <div class="main-chat__message__log__upload__name">
               ${message.user_name}
@@ -21,7 +21,7 @@ $(function(){
       return html;
     } else {
       var html =
-        `<div class="main-chat__message__log">
+        `<div class="main-chat__message__log" data-message-id="${message.id}">
           <div class="main-chat__message__log__upload">
             <div class="main-chat__message__log__upload__name">
               ${message.user_name}
@@ -86,7 +86,7 @@ $(function(){
         alert('error');
       });
     };
-    if (document.location.href.match(/\/groups\/messages/)) {
+    if (document.location.href.match(/\/groups\/\d+\/messages/)) {
       setInterval(reloadMessages, 7000);
     }
 });
