@@ -1,7 +1,7 @@
 .side-bar{
+  width:300px;
   &__header{
     background-color:#253141;
-    width:300px;
     height:100px;
     display: flex;
     align-items: center;
@@ -39,14 +39,14 @@
   &__group-list{
     background-color: #2f3e51;
     height: calc(100vh - 100px);
-    padding:20px 20px 0 20px;
-    overflow: scroll;
+    padding: 20px;
     a {
     color:#ffffff;
     text-decoration: none;
     }
     &__box{
       margin-bottom: 40px;
+      width: 260px;
       &__name{
         font-size:15px;
         margin-bottom: 5px;
@@ -55,6 +55,10 @@
       }
       &__message{
         font-size:11px;
+        width:100%;
+        overflow: scroll;
+        word-wrap: break-word;
+        white-space: nowrap;
       }
     }
   }
